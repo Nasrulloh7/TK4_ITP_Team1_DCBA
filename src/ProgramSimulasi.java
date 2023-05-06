@@ -57,6 +57,35 @@ public class ProgramSimulasi {
                 // Menu 3
                 case 3:
                     System.out.println("Selection Sort - Ascending");
+                    System.out.println("Array sebelum diurutkan: ");
+                    for (int i = 0; i < data.length; i++) {
+                       System.out.print(data[i] + " ");
+                    }
+                    System.out.println();
+                    int temp, minIndex;
+                    for (int i = 0; i < data.length - 1; i++) {
+                       minIndex = i;
+                       for (int j = i + 1; j < data.length; j++) {
+                          if (data[j] < data[minIndex]) {
+                             minIndex = j;
+                          }
+                       }
+                       
+                       temp = data[i];
+                       data[i] = data[minIndex];
+                       data[minIndex] = temp;
+              
+                       System.out.println("\nArray setelah putaran " + (i+1) + ":");
+                       for (int k = 0; k < data.length; k++) {
+                          System.out.print(data[k] + " ");
+                       }
+                    }
+              
+                    System.out.println("\n\nArray setelah diurutkan secara ascending: ");
+                    for (int i = 0; i < data.length; i++) {
+                       System.out.print(data[i] + " ");
+                    }
+                    System.out.println();
                     break;
                 
                 // Menu 4
