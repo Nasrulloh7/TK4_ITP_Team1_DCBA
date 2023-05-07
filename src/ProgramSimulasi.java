@@ -13,11 +13,11 @@ import java.util.Random;
 
 public class ProgramSimulasi {
     public static void main(String[] args) {
-        
+
         Scanner scanner = new Scanner(System.in);
         int[] data = new int[5];
         boolean exit = false;
-        
+
         while(!exit) {
             System.out.println("----------------------------------");
             System.out.println("Selamat Datang di Program Simulasi");
@@ -29,11 +29,11 @@ public class ProgramSimulasi {
             System.out.println("5. Simulasi Selection Sort – Descending");
             System.out.println("6. Keluar");
             System.out.print("Masukkan pilihan: ");
-            
+
             int choice = scanner.nextInt();
-            
+
             switch(choice) {
-                
+
                 // Menu 1
                 case 1:
                     System.out.print("Masukkan batas bawah: ");
@@ -48,12 +48,12 @@ public class ProgramSimulasi {
                     System.out.println();
                     break;
                 // Menu 1 Selesai
-                    
+
                 // Menu 2
                 case 2:
                     System.out.println("Bubble Sort - Ascending");
                     break;
-                    
+
                 // Menu 3
                 case 3:
                     System.out.println("Selection Sort - Ascending");
@@ -70,41 +70,62 @@ public class ProgramSimulasi {
                              minIndex = j;
                           }
                        }
-                       
+
                        temp = data[i];
                        data[i] = data[minIndex];
                        data[minIndex] = temp;
-              
+
                        System.out.println("\nArray setelah putaran " + (i+1) + ":");
                        for (int k = 0; k < data.length; k++) {
                           System.out.print(data[k] + " ");
                        }
                     }
-              
+
                     System.out.println("\n\nArray setelah diurutkan secara ascending: ");
                     for (int i = 0; i < data.length; i++) {
                        System.out.print(data[i] + " ");
                     }
                     System.out.println();
                     break;
-                
+
                 // Menu 4
                 case 4:
                     System.out.println("Bubble Sort - Descending");
                     break;
-                    
+
                 // Menu 5
                 case 5:
                     System.out.println("Selection Sort - Descending");
-                    break;
-                
-                // Menu 6
+                for (int i=0;i<(5-1);i++) {
+                    int index = i;
+                    for (int j = i + 1; j < 5; j++) {
+                        //Introduction to Programming
+                        if (data[j] > data[index]) {
+                            index = j;// searching for lowest index
+                        }
+                    }
+                    int smallerNumber = data[index];
+                    data[index]=data[i];
+                    data[i] = smallerNumber;
+                    System.out.println("\nArray setelah putaran "+(i+1));
+                    for (int k =0;k<5;k++) {
+                        System.out.print(data[k]+" ");
+                    }
+                }
+                    System.out.println("\n\nArray setelah diurutkan secara descending : ");
+                    for (int i = 0; i < data.length; i++) {
+                        System.out.print(data[i] + " ");
+                    }
+                System.out.println();
+                break;
+
+        // Menu 6
                 case 6:
                     exit = true;
                     System.out.println("Keluar dari program");
                     break;
                 // Menu 6 Selesai
-                
+
                 default:
                     System.out.println("Pilihan tidak valid");
                     System.out.println();
@@ -112,7 +133,7 @@ public class ProgramSimulasi {
             }
         }
     }
-    
+
     // fungsi untuk menampilkan data
     public static void printData(int[] data) {
         for (int i = 0; i < data.length; i++) {
