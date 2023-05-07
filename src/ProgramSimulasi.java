@@ -52,6 +52,34 @@ public class ProgramSimulasi {
                 // Menu 2
                 case 2:
                     System.out.println("Bubble Sort - Ascending");
+                    System.out.println("Array sebelum diurutkan: ");
+                    for (int i = 0; i < data.length; i++) {
+                        System.out.print(data[i] + " ");
+                    }
+                    System.out.println();
+
+                    for (int i = 0; i < data.length - 1; i++) {
+                        for (int j = 0; j < data.length - i - 1; j++) {
+                            if (data[j] > data[j + 1]) {
+                                int temp = data[j];
+                                data[j] = data[j + 1];
+                                data[j + 1] = temp;
+                            }
+                        }
+
+                        System.out.println("Array setelah putaran " + (i + 1) + ": ");
+                        for (int k = 0; k < data.length; k++) {
+                            System.out.print(data[k] + " ");
+                        }
+                        System.out.println();
+                    }
+
+
+                    System.out.println("Array setelah diurutkan secara ascending: ");
+                    for (int i = 0; i < data.length; i++) {
+                        System.out.print(data[i] + " ");
+                    }
+                    System.out.println();
                     break;
 
                 // Menu 3
